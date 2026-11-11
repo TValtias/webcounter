@@ -2,6 +2,7 @@
 Resource  resource.robot
 Suite Setup  Open And Configure Browser
 Suite Teardown  Close Browser
+Test Setup  Reset Counter
 
 *** Test Cases ***
 At start the counter is zero
@@ -19,3 +20,14 @@ Reset button resets counter
     Go To  ${HOME_URL}
     Click  button >> text=Nollaa
     Get Text  body  *=  nappia painettu 0 kertaa
+
+Set value changes counter
+    Go To  ${HOME_URL}
+    Fill Text  input[name="value"]  10
+    Click  button >> text=aseta
+    Get Text  body  *=  nappia painettu 10 kertaa
+
+*** Keywords ***
+Reset Counter
+    Go To  ${HOME_URL}
+    Click  button >> text=Nollaa
