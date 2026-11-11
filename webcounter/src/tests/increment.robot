@@ -14,3 +14,8 @@ When button pressed twice the counter is two
     Click  button >> text=Paina
     Click  button >> text=Paina
     Get Text  body  *=  nappia painettu 2 kertaa
+
+Reset button resets counter
+    Go To  ${HOME_URL}
+    Click  button >> text=Nollaa
+    Get Text  body  *=  nappia painettu 0 kertaa
